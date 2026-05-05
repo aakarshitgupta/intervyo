@@ -477,3 +477,257 @@ $severity-low: #3fb950;
         border-color: rgba($severity-low, 0.25);
     }
 }
+
+// Visual polish overrides
+.interview-page {
+    background:
+        radial-gradient(circle at 12% 10%, rgba($accent, 0.12), transparent 23rem),
+        radial-gradient(circle at 92% 18%, rgba(#22c55e, 0.07), transparent 22rem),
+        linear-gradient(180deg, #0b1020 0%, #0f172a 100%);
+}
+
+.interview-layout {
+    background: rgba(17, 24, 39, 0.9);
+    border-color: rgba(148, 163, 184, 0.18);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+    overflow: hidden;
+    backdrop-filter: blur(18px);
+}
+
+.interview-divider {
+    background: rgba(148, 163, 184, 0.18);
+}
+
+.interview-nav {
+    background: rgba(15, 23, 42, 0.72);
+
+    &__label {
+        color: #94a3b8;
+    }
+
+    &__item {
+        border: 1px solid transparent;
+        border-radius: 0.75rem;
+        font-weight: 650;
+        transition: background-color 0.18s, color 0.18s, border-color 0.18s, transform 0.18s;
+
+        &:hover {
+            background-color: rgba(148, 163, 184, 0.1);
+            border-color: rgba(148, 163, 184, 0.14);
+            transform: translateX(2px);
+        }
+
+        &--active {
+            background: rgba($accent, 0.14);
+            border-color: rgba($accent, 0.28);
+            color: #ff5e96;
+        }
+    }
+
+    .button {
+        width: 100%;
+        white-space: nowrap;
+    }
+}
+
+.interview-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
+
+    &::-webkit-scrollbar {
+        display: block;
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(148, 163, 184, 0.35);
+        border-radius: 999px;
+    }
+}
+
+.content-header {
+    align-items: center;
+    border-bottom-color: rgba(148, 163, 184, 0.18);
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    &__count {
+        background-color: rgba(148, 163, 184, 0.1);
+        border-color: rgba(148, 163, 184, 0.16);
+    }
+}
+
+.q-list {
+    gap: 0.9rem;
+}
+
+.q-card {
+    background: rgba(18, 26, 42, 0.86);
+    border-color: rgba(148, 163, 184, 0.16);
+    border-radius: 0.85rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        transform: translateY(-1px);
+        border-color: rgba($accent, 0.34);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+    }
+
+    &__header {
+        padding: 1rem 1.1rem;
+    }
+
+    &__index {
+        border-radius: 999px;
+        color: #ff5e96;
+        background-color: rgba($accent, 0.13);
+    }
+
+    &__question {
+        font-size: 0.94rem;
+    }
+
+    &__body {
+        border-top-color: rgba(148, 163, 184, 0.16);
+        background: rgba(15, 23, 42, 0.4);
+    }
+
+    &__tag {
+        border-radius: 999px;
+    }
+}
+
+.roadmap-list::before {
+    background: linear-gradient(to bottom, $accent, rgba(#22c55e, 0.34), rgba($accent, 0.08));
+}
+
+.roadmap-day {
+    border-radius: 0.75rem;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(148, 163, 184, 0.05);
+    }
+
+    &__badge {
+        border-radius: 999px;
+        color: #ff5e96;
+    }
+}
+
+.interview-sidebar {
+    background: rgba(15, 23, 42, 0.56);
+}
+
+.match-score {
+    &__ring {
+        width: 104px;
+        height: 104px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 64%);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 14px 34px rgba(0, 0, 0, 0.2);
+    }
+
+    &__sub {
+        color: #86efac;
+        line-height: 1.4;
+    }
+}
+
+.sidebar-divider {
+    background-color: rgba(148, 163, 184, 0.18);
+}
+
+.skill-tag {
+    border-radius: 999px;
+    font-weight: 650;
+}
+
+@media (max-width: 980px) {
+    .interview-page {
+        padding: 1rem;
+    }
+
+    .interview-layout {
+        flex-direction: column;
+    }
+
+    .interview-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .interview-nav,
+    .interview-sidebar {
+        width: 100%;
+    }
+
+    .interview-nav {
+        gap: 1rem;
+
+        .nav-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        &__label {
+            width: 100%;
+        }
+
+        &__item {
+            width: auto;
+            flex: 1 1 180px;
+        }
+    }
+
+    .interview-content {
+        max-height: none;
+        padding: 1.5rem;
+    }
+
+    .interview-sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .sidebar-divider {
+        display: none;
+    }
+
+    .match-score,
+    .skill-gaps {
+        flex: 1 1 220px;
+    }
+}
+
+@media (max-width: 560px) {
+    .interview-page {
+        padding: 0;
+    }
+
+    .interview-layout {
+        border: none;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .interview-nav,
+    .interview-content,
+    .interview-sidebar {
+        padding: 1rem;
+    }
+
+    .content-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .q-card__header {
+        gap: 0.6rem;
+    }
+}
