@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://intervyo-73rx.onrender.com",
+    baseURL: "https://intervyo-73rx.onrender.com/",
     withCredentials: true,
 })
 
