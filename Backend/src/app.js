@@ -4,10 +4,15 @@ const cors = require("cors")
 
 const app = express()
 
+const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean)
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "https://prepyn.vercel.app",
+    origin: allowedOrigins,
     credentials: true
 }))
 
